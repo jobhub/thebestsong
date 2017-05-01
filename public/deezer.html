@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Deezer for developers</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
+</head>
+<body>
+	<div id="player"></div>
+    <div id="dz-root"></div>
+    <script src="http://cdn-files.deezer.com/js/min/dz.js"></script>
+    <script>
+    DZ.init({
+    appId : '137401',
+    channelUrl : 'http://localhost/channel.html',
+    player: {
+    container: 'player',
+    width : 800,
+    height : 300,
+    onload : function(){
+		DZ.player.playTracks([3135556, 1152226]);
+		}    
+    }
+    });
+    </script>    
+</body>
+</html>

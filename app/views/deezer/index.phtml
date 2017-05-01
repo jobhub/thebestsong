@@ -1,0 +1,46 @@
+<div id="dz-root"></div>
+<script src="js/jquery/jquery-1.10.1.min.js"></script>
+<script>
+	 function login(){
+		DZ.login(function(response) {
+		if (response.authResponse) {
+			DZ.api('/user/me', function(user) {
+			console.log('Successful Login!');
+	   
+			$('#name').html(user.name); });
+	   }
+	   }, {perms: 'email'});
+	 }   	
+
+	window.dzAsyncInit = function() {
+		DZ.init({
+		appId : '137401',
+		channelUrl : 'http://localhost/thebestsong/channel.html'
+		});
+
+    DZ.getLoginStatus(function(response) {
+		console.log('getLoginStatus');
+		console.log(response);
+		if (response.authResponse) {
+		// logged in and connected user, someone you know
+			DZ.api('/user/me', function(user) {
+			console.log(user);
+	   
+			$('#name').html(user.name); 
+			});		
+		} else {
+		// no user session available, someone you dont know
+			console.log('anonymous');
+		}
+    });		
+	};
+
+	(function() {
+		var e = document.createElement('script');
+		e.src = 'http://cdn-files.deezer.com/js/min/dz.js';
+		e.async = true;
+		document.getElementById('dz-root').appendChild(e);
+	}());
+</script>
+<input type="button" onclick="login();" value="Login"/>
+<p>Good to see you, <span id="name"></span></p>
