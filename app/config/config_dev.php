@@ -9,7 +9,7 @@ return new \Phalcon\Config(array(
         'adapter'     => 'Mysql',
         'host'        => 'localhost',
         'username'    => 'thebestsong',
-        'password'    => 'JNoj7U3xbb',
+        'password'    => '',
         'dbname'      => 'thebestsong',
     ),
     'application' => array(
@@ -25,7 +25,7 @@ return new \Phalcon\Config(array(
         'cacheDir'       => __DIR__ . '/../../app/cache/',
         'baseUri'        => '/thebestsong/',
         'publicUrl' => 'http://dev.res-populi.com/thebestsong',
-        'cryptSalt' => 'eEAfR|_&G&f,+vU]:jFr!!A&+71w1Ms9~8_4L!<@[N@DyaIP_2My|:+.u>/6m,$D',
+        'cryptSalt' => '',
         'client_session_key' => 'Maradona'        
     ),
     'mail' => array(
@@ -40,8 +40,8 @@ return new \Phalcon\Config(array(
         )
     ),
     'facebook' => array(
-		'appId' => '749556845096687',
-		'appSecret' => '59c82eef46adac991782546a39e57717'
+		'appId' => '',
+		'appSecret' => ''
     ),    
     'log' => false
 ));
